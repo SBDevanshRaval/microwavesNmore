@@ -1,4 +1,232 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+:root {
+  --theme-color-blue: #2196F3;
+  --theme-color-black: rgb(49, 49, 49);
+  --primary-gradient: linear-gradient(45deg, #2196F3, #00BCD4);
+  --surface-gradient: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  --background-light: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  --primary-color: #2196F3;
+  --secondary-color: #00BCD4;
+  --text-color: #333;
+  --border-radius-sm: 10px;
+  --border-radius-md: 15px;
+  --border-radius-lg: 20px;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --transition-default: all 0.3s ease;
+}
+
+
+div[class*='page-main-container'] {
+  min-height: 100dvh;
+   margin: auto;
+  max-width: 1200px;
+  /* background-color: powderblue; */
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
+  color: rgb(49, 49, 49);
+
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins, sans-serif"
+}
+
+
+.theme-color-blue {
+  color: var(--theme-color-blue)
+}
+
+.theme-color-blue-bg {
+  background-color: var(--theme-color-blue)
+}
+
+.theme-color-black {
+  color: var(--theme-color-black)
+}
+
+.theme-color-black-bg {
+  background-color: var(--theme-color-black)
+}
+
+.pbtn {
+  color: var(--theme-color-blue);
+  border: 2px solid var(--theme-color-blue) !important;
+  font-weight: 700;
+  padding: 0.5rem 2rem;
+}
+
+.pbtn:hover {
+  background-color: var(--theme-color-blue);
+  color: white;
+ }
+
+/* Typography */
+.heading-gradient {
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-lg {
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+.text-xl {
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+.text-2xl {
+  font-size: 2rem;
+  line-height: 1.4;
+}
+
+.text-3xl {
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+/* Layout Containers */
+.glass-container {
+  background: var(--surface-gradient);
+  backdrop-filter: blur(10px);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xs);
+}
+
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.flex-container {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+/* Cards */
+.card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Form Styles */
+.form-container {
+  width: 100%;
+}
+
+.form-field {
+  width: 100%;
+  margin-bottom: var(--spacing-md);
+}
+
+/* Material Form Field Customization */
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: rgba(0, 0, 0, 0.1);
+}
+
+::ng-deep .mat-form-field-outline {
+  border-radius: var(--border-radius-sm);
+}
+
+/* Buttons */
+.btn-primary {
+  padding: var(--spacing-sm);
+  font-size: 1.1rem;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  background: var(--primary-gradient);
+  color: white;
+  cursor: pointer;
+  transition: var(--transition-default);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(33, 150, 243, 0.4);
+}
+
+/* Icon Alignment */
+.icon-text {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.icon-text mat-icon {
+  color: var(--primary-color);
+}
+
+/* Hover Effects */
+.hover-translate {
+  transition: var(--transition-default);
+}
+
+.hover-translate:hover {
+  transform: translateX(10px);
+}
+
+.hover-scale {
+  transition: var(--transition-default);
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+/* Responsive Utilities */
+@media (max-width: 768px) {
+  .glass-container {
+    padding: var(--spacing-xs);
+  }
+
+  .card {
+    padding: var(--spacing-md);
+  }
+
+  .text-2xl {
+    font-size: 1.75rem;
+  }
+
+  .text-3xl {
+    font-size: 2rem;
+  }
+}
+
+/* Material Icons Alignment */
+::ng-deep .mat-icon {
+  vertical-align: middle;
+}
+
+::ng-deep .mat-form-field-suffix {
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,29 @@
+<mat-toolbar  class="header-toolbar">
+  <div class="container toolbar-container">
+    <span class="logo" routerLink="/">Microwaves<span class="theme-color-blue">N</span>More</span>
+
+    <span class="spacer"></span>
+
+    <nav class="nav-links">
+      <a mat-button routerLink="/home" routerLinkActive="active-link">Home</a>
+      <a mat-button routerLink="/catalog" routerLinkActive="active-link">Catalog</a>
+      <a mat-button routerLink="/blog" routerLinkActive="active-link">Blog</a>
+      <a mat-button routerLink="/about" routerLinkActive="active-link">About Us</a>
+      <a mat-button routerLink="/contact" routerLinkActive="active-link">Contact Us</a>
+    </nav>
+
+    <!-- Mobile menu button -->
+    <button mat-icon-button class="mobile-menu-button" (click)="toggleMobileMenu()" aria-label="Toggle menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+
+<!-- Mobile nav menu -->
+<nav *ngIf="mobileMenuOpen" class="mobile-nav-links">
+  <a mat-list-item routerLink="/home" routerLinkActive="active-link" (click)="closeMobileMenu()" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+  <a mat-list-item routerLink="/catalog" routerLinkActive="active-link" (click)="closeMobileMenu()">Catalog</a>
+  <a mat-list-item routerLink="/blog" routerLinkActive="active-link" (click)="closeMobileMenu()">Blog</a>
+  <a mat-list-item routerLink="/about" routerLinkActive="active-link" (click)="closeMobileMenu()">About Us</a>
+  <a mat-list-item routerLink="/contact" routerLinkActive="active-link" (click)="closeMobileMenu()">Contact Us</a>
+</nav>
