@@ -1,6 +1,10 @@
 .main-content-container {
     width: 100%;
     min-height: 100dvh;
+    padding-bottom: 80px; /* Add padding to prevent content from being hidden behind the footer */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
 

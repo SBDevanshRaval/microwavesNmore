@@ -1,1 +1,73 @@
-<p>catalog works!</p>
+<div class="home-page-main-container">
+    <div class="filter-container">
+        <mat-form-field appearance="outline">
+            <mat-label>Search microwaves</mat-label>
+            <input 
+                matInput 
+                (input)="onSearch($event)" 
+                [value]="searchTerm" 
+                placeholder="Search by name..."
+                aria-label="Search microwaves">
+            <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Filter by Category</mat-label>
+            <mat-select 
+                [(value)]="selectedCategory" 
+                (selectionChange)="onCategoryChange($event.value)"
+                aria-label="Select category">
+                <mat-option *ngFor="let category of categories" [value]="category">
+                    {{category}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="items-list-container">
+        <div class="mat-grid">
+            <mat-card class="card" *ngFor="let item of paginatedItems">
+                <div class="carousel-container" role="region" [attr.aria-label]="'Image carousel for ' + item.title">
+                    <button 
+                        class="nav-button prev-button" 
+                        (click)="previousImage(item)"
+                        [attr.aria-label]="'Previous image for ' + item.title">
+                        <mat-icon>chevron_left</mat-icon>
+                    </button>
+                    
+                    <div class="image-container">
+                        <img 
+                            mat-card-image 
+                            [src]="getCurrentImage(item)" 
+                            [alt]="item.title"
+                            loading="lazy">
+                        <div class="image-indicator" aria-live="polite">
+                            {{currentImageIndex[item.title] + 1}} / {{item.images.length}}
+                        </div>
+                    </div>
+
+                    <button 
+                        class="nav-button next-button" 
+                        (click)="nextImage(item)"
+                        [attr.aria-label]="'Next image for ' + item.title">
+                        <mat-icon>chevron_right</mat-icon>
+                    </button>
+                </div>
+                
+                <mat-card-content>
+                    <h3>{{item.title}}</h3>
+                    <p class="price" aria-label="Price">${{item.price}}</p>
+                    <p class="category" aria-label="Category">{{item.category}}</p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+        <mat-paginator
+            [length]="filteredItems.length"
+            [pageSize]="pageSize"
+            [pageSizeOptions]="[6, 12, 18, 24, 30]"
+            (page)="onPageChange($event)"
+            aria-label="Select page">
+        </mat-paginator>
+    </div>
+</div>
