@@ -11,96 +11,98 @@ export class CatalogComponent {
 
   items = [
     { 
-      title: 'Microwave A', 
-      images: ['assets/a.jpg', 'assets/a2.jpg', 'assets/a3.jpg'], 
-      price: 199.99, 
-      category: 'Countertop' 
+      title: 'Gourmia Digital Air fryer 3 Quartz', 
+      images: ['assets/products/1_1.jpg','assets/products/1_2.jpg','assets/products/1_3.jpg'], 
+      price: 50, 
+      category: 'air fryer',
+      quantity: 3 
     },
     { 
-      title: 'Microwave B', 
-      images: ['assets/hero_microwaves.png', 'assets/hero_microwaves.png', 'assets/hero_microwaves.png'], 
-      price: 299.99, 
-      category: 'Over-the-Range' 
+      title: 'Gourmia GAF616 6-QT Digital Window Air Fryer', 
+      images: ['assets/products/2_2.jpg','assets/products/2_1.jpg','assets/products/2_3.jpg'], 
+      price: 60, 
+      category: 'air fryer',
+      quantity: 7 
     },
     { 
-      title: 'Microwave C', 
-      images: ['assets/c.jpg', 'assets/c2.jpg', 'assets/c3.jpg'], 
-      price: 159.99, 
-      category: 'Countertop' 
+      title: 'Insta Pot Multi-Cooker 6 Quartz', 
+      images: ['assets/products/3_1.webp','assets/products/3_2.webp','assets/products/3_3.webp','assets/products/3_4.webp'], 
+      price: 60, 
+      category: 'cooker',
+      quantity: 10 
     },
     { 
-      title: 'Microwave D', 
-      images: ['assets/d.jpg', 'assets/d2.jpg', 'assets/d3.jpg'], 
-      price: 399.99, 
-      category: 'Built-in' 
+      title: 'so yummy bella mini 2Qt Air fryer', 
+      images: ['assets/products/4_1.jpg'], 
+      price: 50, 
+      category: 'air fryer',
+      quantity: 10 
     },
     { 
-      title: 'Microwave E', 
-      images: ['assets/e.jpg', 'assets/e2.jpg', 'assets/e3.jpg'], 
-      price: 249.99, 
-      category: 'Over-the-Range' 
+      title: 'fohere waffle maker', 
+      images: ['assets/products/5_1.jpg','assets/products/5_2.jpg','assets/products/5_3.jpg'], 
+      price: 20, 
+      category: 'waffle maker',
+      quantity: 10 
     },
     { 
-      title: 'Microwave F', 
-      images: ['assets/f.jpg', 'assets/f2.jpg', 'assets/f3.jpg'], 
-      price: 179.99, 
-      category: 'Countertop' 
+      title: 'fohere Double rotating waffle maker', 
+      images: ['assets/products/6_1.jpg','assets/products/6_2.jpg','assets/products/6_3.jpg'], 
+      price: 15, 
+      category: 'waffle maker',
+      quantity: 18 
     },
     { 
-      title: 'Microwave G', 
-      images: ['assets/g.jpg', 'assets/g2.jpg', 'assets/g3.jpg'], 
-      price: 449.99, 
-      category: 'Built-in' 
+      title: 'gem guardian', 
+      images: ['assets/products/7_1.jpg','assets/products/7_2.jpg','assets/products/7_3.jpg'], 
+      price: 70, 
+      category: 'air purifier',
+      quantity: 60 
     },
     { 
-      title: 'Microwave H', 
-      images: ['assets/h.jpg', 'assets/h2.jpg', 'assets/h3.jpg'], 
-      price: 189.99, 
-      category: 'Countertop' 
+      title: 'shoe bench', 
+      images: ['assets/products/8_1.jpg'], 
+      price: 176, 
+      category: 'furniture',
+      quantity: 6 
     },
     { 
-      title: 'Microwave I', 
-      images: ['assets/i.jpg', 'assets/i2.jpg', 'assets/i3.jpg'], 
-      price: 279.99, 
-      category: 'Over-the-Range' 
+      title: 'Homemedics body flex', 
+      images: ['assets/products/9_1.webp','assets/products/9_2.webp','assets/products/9_3.webp'], 
+      price: 395, 
+      category: 'massage',
+      quantity: 30 
     },
     { 
-      title: 'Microwave J', 
-      images: ['assets/j.jpg', 'assets/j2.jpg', 'assets/j3.jpg'], 
-      price: 499.99, 
-      category: 'Built-in' 
+      title: 'so yummy bella 2Qt set of 2 slow cooker', 
+      images: ['assets/products/10_2.jpg','assets/products/10_1.jpg','assets/products/10_3.jpg'], 
+      price: 50, 
+      category: 'cooker',
+      quantity: 5 
     },
     { 
-      title: 'Microwave K', 
-      images: ['assets/k.jpg', 'assets/k2.jpg', 'assets/k3.jpg'], 
-      price: 169.99, 
-      category: 'Countertop' 
+      title: 'Hisense 3.3 fridge', 
+      images: ['assets/products/11_1.jpg','assets/products/11_2.jpg','assets/products/11_3.jpg'], 
+      price: 154, 
+      category: 'fridge',
+      quantity: 10 
     },
     { 
-      title: 'Microwave L', 
-      images: ['assets/l.jpg', 'assets/l2.jpg', 'assets/l3.jpg'], 
-      price: 289.99, 
-      category: 'Over-the-Range' 
+      title: 'hisense 1.6 freezer/mini fridge', 
+      images: ['assets/hisense-1.6.jpg'], 
+      price: 129, 
+      category: 'fridge',
+      quantity: 1 
     },
     { 
-      title: 'Microwave M', 
-      images: ['assets/m.jpg', 'assets/m2.jpg', 'assets/m3.jpg'], 
-      price: 459.99, 
-      category: 'Built-in' 
-    },
-    { 
-      title: 'Microwave N', 
-      images: ['assets/n.jpg', 'assets/n2.jpg', 'assets/n3.jpg'], 
-      price: 199.99, 
-      category: 'Countertop' 
-    },
-    { 
-      title: 'Microwave O', 
-      images: ['assets/o.jpg', 'assets/o2.jpg', 'assets/o3.jpg'], 
-      price: 319.99, 
-      category: 'Over-the-Range' 
-    },
+      title: 'frigidaire 7.0 white chest freezer', 
+      images: ['assets/frigidaire.jpg'], 
+      price: 449, 
+      category: 'fridge',
+      quantity: 7 
+    }
   ];
+  
 
   paginatedItems: any[] = [];
   pageSize = 6;
@@ -108,7 +110,7 @@ export class CatalogComponent {
   searchTerm: string = '';
   selectedCategory: string = '';
   
-  categories = ['All', 'Countertop', 'Over-the-Range', 'Built-in'];
+  categories = ['All', 'air fryer', 'cooker', 'fridge', 'massage', 'air purifier', 'furniture'];
 
   // Track current image index for each item
   currentImageIndex: { [key: string]: number } = {};
