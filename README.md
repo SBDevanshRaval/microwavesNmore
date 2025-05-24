@@ -35,7 +35,7 @@ git pull                            # Update main
 git merge <branch>                  # Merge branch into main  
 
 ⚔️ Fix Merge Conflicts  
-# 1. Manually resolve conflict markers in file  
+1. Manually resolve conflict markers in file  
 git add <file>  
 git commit -m "Resolve conflict in <file>"  
 
@@ -45,9 +45,9 @@ git reset HEAD <file>              # Unstage file
 git revert <commit>                # Safely undo a commit  
 
 🚀 Pull Request Flow  
-# 1. git checkout -b feature/xyz  
-# 2. Make changes + commit + push  
-# 3. Open PR on GitHub and merge  
+1. git checkout -b feature/xyz  
+2. Make changes + commit + push  
+3. Open PR on GitHub and merge  
 
 🧽 Stash (optional)  
 git stash                           # Save work temporarily  
