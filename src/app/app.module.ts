@@ -16,7 +16,14 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { CatalogComponent } from './pages/catalog/catalog.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatCardModule } from '@angular/material/card';
+
+
 import { MatInputModule } from '@angular/material/input';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import {MatSelectModule} from '@angular/material/select';
+
 
 
 @NgModule({
@@ -40,6 +47,10 @@ import { MatInputModule } from '@angular/material/input';
     MatListModule,
       MatFormFieldModule,
     MatInputModule,
+    MatSelectModule,
+    MatPaginatorModule,
+    CarouselModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

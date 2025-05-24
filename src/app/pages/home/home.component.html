@@ -1,15 +1,59 @@
 <div class="home-container home-page-main-container">
     <div class="hero-banner">
         <div class="hero-banner-left">
-            <span class="hero-banner-left-title">Appliances Sales</span>
-            <span class="hero-banner-left-description">Bringing convenience and innovation to your home, one appliance at a time. Quality products, unbeatable prices, and exceptional service</span>
+            <span class="hero-banner-left-title">Smart Living, <br>Better Living</span>
+            <span class="hero-banner-left-description">Discover our premium selection of home appliances that combine innovation, style, and functionality. Transform your living space with our cutting-edge products.</span>
+            <div class="hero-cta-buttons">
+                <button class="primary-btn" routerLink="/catalog">Shop Now</button>
+                <button class="secondary-btn"  routerLink="/blog">Learn More</button>
+            </div>
         </div>
         <div class="hero-banner-right">
-            <img src="assets/shape-removebg-preview.png" alt="Hero Banner" class="shape-image">
-            <img src="assets/hero_microwaves.png" alt="hero banner" class="hero-microwave-image">
+            <img src="assets/shape-removebg-preview.png" alt="Decorative Shape" class="shape-image">
+            <img src="assets/hero_microwaves.png" alt="Featured Microwave" class="hero-microwave-image">
         </div>
     </div>
+
+    <div class="explore-categories-container">
+        <div class="category-left">
+            <img src="assets/dk.png" alt="Kitchen Appliances" class="dk-image">
+        </div>
+        <div class="category-title-right">
+            <div class="category-content">
+                <span>Explore Categories</span>
+                <p class="category-description">Browse through our carefully curated collection of premium appliances</p>
+                <div class="category-grid">
+                    <div class="category-card">
+                        <i class="fas fa-microwave"></i>
+                        <span>Microwaves</span>
+                    </div>
+                    <div class="category-card">
+                        <i class="fas fa-refrigerator"></i>
+                        <span>Refrigerators</span>
+                    </div>
+                    <div class="category-card">
+                        <i class="fas fa-washing-machine"></i>
+                        <span>Washers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="slider-container">
-        
+        <h2 class="section-title">Featured Products</h2>
+        <owl-carousel-o [options]="options">
+            <ng-container *ngFor="let image of images">
+                <ng-template carouselSlide [id]="image.id">
+                    <div class="product-card">
+                        <img [src]="image.src" [alt]="image.alt" class="img-fluid" />
+                        <div class="product-info">
+                            <!-- <h3>{{image.title}}</h3> -->
+                            <!-- <p>{{image.description}}</p> -->
+                        </div>
+                    </div>
+                </ng-template>
+            </ng-container>
+        </owl-carousel-o>
     </div>
 </div>
