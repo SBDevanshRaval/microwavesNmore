@@ -1,6 +1,6 @@
 .header-toolbar {
     background-color: white;
-    border-bottom: 1px solid var(--theme-color-black);
+    border-bottom: 1px solid rgb(155, 155, 155);
 }
 .toolbar-container {
   display: flex;
