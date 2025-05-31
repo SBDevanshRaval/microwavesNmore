@@ -1,0 +1,184 @@
+/* Blog 3 Specific Styles */
+:host {
+  display: block;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: #2c3e50;
+  background: #ffffff;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+h1 {
+  font-size: 2.8rem;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  line-height: 1.3;
+  position: relative;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(to right, #27ae60, #2ecc71);
+  border-radius: 2px;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #34495e;
+  margin: 2.5rem 0 1.5rem;
+  padding-left: 1rem;
+  border-left: 4px solid #27ae60;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: #27ae60;
+  margin: 2rem 0 1rem;
+  display: flex;
+  align-items: center;
+}
+
+h3::before {
+  content: '✓';
+  margin-right: 0.5rem;
+  color: #2ecc71;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #34495e;
+  margin-bottom: 1.5rem;
+}
+
+/* List Styles */
+ul {
+  padding-left: 0;
+  margin: 1.5rem 0;
+  list-style: none;
+}
+
+ul li {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+ul li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #27ae60;
+}
+
+strong {
+  color: #2c3e50;
+  font-weight: 600;
+  background: linear-gradient(120deg, rgba(46, 204, 113, 0.2) 0%, rgba(46, 204, 113, 0.2) 100%);
+  padding: 0.1em 0.2em;
+  border-radius: 3px;
+}
+
+a {
+  color: #27ae60;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #219a52;
+  border-bottom-color: #219a52;
+}
+
+/* Card-like sections */
+h2 + ul,
+h3 + ul {
+  background: #f8f9fa;
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid #27ae60;
+}
+
+/* Feature Sections */
+h3 + ul li {
+  display: flex;
+  align-items: flex-start;
+  background: white;
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+h3 + ul li:hover {
+  transform: translateX(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  :host {
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+/* Animation */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+h1, h2, h3 {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+/* Final Verdict Section */
+h2:last-of-type {
+  text-align: center;
+  border-left: none;
+  padding-left: 0;
+  margin-top: 3rem;
+}
+
+h2:last-of-type + p {
+  text-align: center;
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}

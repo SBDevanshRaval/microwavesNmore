@@ -21,6 +21,7 @@ git branch <name>                   # Create branch
 git checkout <name>                 # Switch branch  
 git checkout -b <name>              # Create + switch  
 git branch -d <name>                # Delete branch  
+git push -d origin (remote) branch_name
 
 🔃 Push & Pull  
 git remote add origin <url>         # Connect to GitHub  

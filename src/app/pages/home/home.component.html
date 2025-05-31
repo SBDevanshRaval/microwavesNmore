@@ -1,12 +1,13 @@
 <div class="home-container home-page-main-container">
     <div class="hero-banner">
         <div class="hero-banner-left">
-            <span class="hero-banner-left-title">Smart Living, <br>Better Living</span>
-            <span class="hero-banner-left-description">Discover our premium selection of home appliances that combine innovation, style, and functionality. Transform your living space with our cutting-edge products.</span>
+            <span class="hero-banner-left-title">Smart Living, <br>Smart Prices</span>
+            <span class="hero-banner-left-description">Smart Home. Smart Prices.
+                Upgrade your space with premium appliances that blend style, performance, and value.
+                Quality products designed to fit your lifestyle and your budget.</span>
             <div class="hero-cta-buttons">
                 <button class="primary-btn" routerLink="/catalog">Shop Now</button>
-                <!-- <button class="secondary-btn"  routerLink="/blog">Learn More</button> -->
-                <button class="secondary-btn" >Learn More</button>
+                <button class="secondary-btn"  routerLink="/blog">Learn More</button>
             </div>
         </div>
         <div class="hero-banner-right">
@@ -24,17 +25,23 @@
                 <span>Explore Categories</span>
                 <p class="category-description">Browse through our carefully curated collection of premium appliances</p>
                 <div class="category-grid">
-                    <div class="category-card">
-                        <i class="fas fa-microwave"></i>
-                        <span>Microwaves</span>
+                    <div class="category-card" (click)="navigateToCategory('Fridge')">
+                        <div class="category-content">
+                            <mat-icon>kitchen</mat-icon>
+                            <span class="category-text">Fridge</span>
+                        </div>
                     </div>
-                    <div class="category-card">
-                        <i class="fas fa-refrigerator"></i>
-                        <span>Refrigerators</span>
+                    <div class="category-card" (click)="navigateToCategory('Air Fryers')">
+                        <div class="category-content">
+                            <mat-icon>bakery_dining</mat-icon>
+                            <span class="category-text">Air Fryers</span>
+                        </div>
                     </div>
-                    <div class="category-card">
-                        <i class="fas fa-washing-machine"></i>
-                        <span>Washers</span>
+                    <div class="category-card" (click)="navigateToCategory('Cookers')">
+                        <div class="category-content">
+                            <mat-icon>kitchen</mat-icon>
+                            <span class="category-text">Cookers</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -42,15 +49,16 @@
     </div>
 
     <div class="slider-container">
-        <h2 class="section-title">Featured Products</h2>
+        <div class="section-header">
+            <h2 class="section-title">Featured Products</h2>
+            <p class="section-subtitle">Discover our most popular and trending items</p>
+        </div>
         <owl-carousel-o [options]="options">
             <ng-container *ngFor="let image of images">
                 <ng-template carouselSlide [id]="image.id">
                     <div class="product-card">
-                        <img [src]="image.src" [alt]="image.alt" class="img-fluid" />
-                        <div class="product-info">
-                            <!-- <h3>{{image.title}}</h3> -->
-                            <!-- <p>{{image.description}}</p> -->
+                        <div class="product-image-wrapper">
+                            <img [src]="image.src" [alt]="image.alt" class="product-image" />
                         </div>
                     </div>
                 </ng-template>

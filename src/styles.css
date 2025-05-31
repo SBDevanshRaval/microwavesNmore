@@ -33,12 +33,15 @@ div[class*='page-main-container'] {
 * {
   font-family: 'Poppins', sans-serif;
   color: rgb(49, 49, 49);
-
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 html,
 body {
   height: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -104,6 +107,7 @@ body {
 }
 
 /* Layout Containers */
+
 .glass-container {
   background: var(--surface-gradient);
   backdrop-filter: blur(10px);
@@ -112,7 +116,7 @@ body {
 }
 
 .content-container {
-  max-width: 1200px;
+  max-width: 1700px;
   margin: 0 auto;
   width: 100%;
 }

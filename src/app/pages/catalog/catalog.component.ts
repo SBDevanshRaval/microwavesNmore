@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-catalog',
@@ -9,34 +10,50 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
 export class CatalogComponent {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
+  // Track loading state for each image
+  imageLoadingState: { [key: string]: boolean } = {};
+  
   items = [
     { 
       title: 'Gourmia Digital Air fryer 3 Quartz', 
       images: ['assets/products/1_1.jpg','assets/products/1_2.jpg','assets/products/1_3.jpg'], 
-      price: 50, 
       category: 'air fryer',
-      quantity: 3 
+      msrp: 99,
+      quantity: 3,
+      wholesale: 39
     },
     { 
       title: 'Gourmia GAF616 6-QT Digital Window Air Fryer', 
       images: ['assets/products/2_2.jpg','assets/products/2_1.jpg','assets/products/2_3.jpg'], 
-      price: 60, 
       category: 'air fryer',
+      msrp: 149,
+      warranty: true,
+      wholesale: 59,
       quantity: 7 
     },
     { 
-      title: 'Insta Pot Multi-Cooker 6 Quartz', 
+      title: 'Instapot 6 QT Multicooker', 
       images: ['assets/products/3_1.webp','assets/products/3_2.webp','assets/products/3_3.webp','assets/products/3_4.webp'], 
-      price: 60, 
       category: 'cooker',
-      quantity: 10 
+      size: '6 QT',
+      msrp: 149,
+      quantity: 10,
+      warranty: true,
+      wholesalePricing: [
+        { condition: 'Each', price: 69 },
+        { condition: 'All 10', price: 57 }
+      ]
     },
     { 
-      title: 'so yummy bella mini 2Qt Air fryer', 
+      title: 'So Yummy Bella Air Fryer - 2 QT', 
       images: ['assets/products/4_1.jpg'], 
-      price: 50, 
       category: 'air fryer',
-      quantity: 10 
+      size: '2 QT',
+      colors: 3,
+      quantity: 10,
+      wholesale: 22,
+      msrp: 59,
+      warranty: false
     },
     { 
       title: 'fohere waffle maker', 
@@ -53,11 +70,18 @@ export class CatalogComponent {
       quantity: 18 
     },
     { 
-      title: 'gem guardian', 
+      title: 'GermGuardian Air Purifier', 
       images: ['assets/products/7_1.jpg','assets/products/7_2.jpg','assets/products/7_3.jpg'], 
-      price: 70, 
       category: 'air purifier',
-      quantity: 60 
+      includes: 'New filter included',
+      msrp: 154,
+      quantity: 60,
+      warranty: false,
+      wholesalePricing: [
+        { range: '2-6 units', price: 69 },
+        { range: '6-12 units', price: 59 },
+        { range: 'All 60 units', price: 39 }
+      ]
     },
     { 
       title: 'shoe bench', 
@@ -67,11 +91,17 @@ export class CatalogComponent {
       quantity: 6 
     },
     { 
-      title: 'Homemedics body flex', 
+      title: 'Homemedics Body Flex Compression Stretching Mat', 
       images: ['assets/products/9_1.webp','assets/products/9_2.webp','assets/products/9_3.webp'], 
-      price: 395, 
       category: 'massage',
-      quantity: 30 
+      msrp: 395,
+      quantity: 30,
+      warranty: true,
+      pricingTiers: [
+        { range: '2-6', price: 89 },
+        { range: '6-12', price: 79 },
+        { range: 'All 30', price: 65 }
+      ]
     },
     { 
       title: 'so yummy bella 2Qt set of 2 slow cooker', 
@@ -115,10 +145,26 @@ export class CatalogComponent {
   // Track current image index for each item
   currentImageIndex: { [key: string]: number } = {};
 
-  constructor() {
-    // Initialize current image index for each item to 0
+  constructor(private route: ActivatedRoute) {
+    // Initialize current image index and loading state for each item
     this.items.forEach(item => {
       this.currentImageIndex[item.title] = 0;
+      this.imageLoadingState[item.title] = true;
+      
+      // Preload first image of each item
+      const img = new Image();
+      img.src = item.images[0];
+      img.onload = () => {
+        this.imageLoadingState[item.title] = false;
+      };
+    });
+
+    // Subscribe to query params
+    this.route.queryParams.subscribe(params => {
+      if (params['category']) {
+        this.selectedCategory = params['category'];
+        this.updatePaginatedItems();
+      }
     });
   }
 
@@ -161,15 +207,34 @@ export class CatalogComponent {
     this.updatePaginatedItems();
   }
 
-  // Carousel navigation methods
+  onImageLoad(item: any) {
+    this.imageLoadingState[item.title] = false;
+  }
+
+  isImageLoading(item: any): boolean {
+    return this.imageLoadingState[item.title];
+  }
+
   nextImage(item: any) {
+    this.imageLoadingState[item.title] = true;
     this.currentImageIndex[item.title] = 
       (this.currentImageIndex[item.title] + 1) % item.images.length;
+    
+    // Preload the next image
+    const nextIndex = (this.currentImageIndex[item.title] + 1) % item.images.length;
+    const img = new Image();
+    img.src = item.images[nextIndex];
   }
 
   previousImage(item: any) {
+    this.imageLoadingState[item.title] = true;
     this.currentImageIndex[item.title] = 
       (this.currentImageIndex[item.title] - 1 + item.images.length) % item.images.length;
+    
+    // Preload the previous image
+    const prevIndex = (this.currentImageIndex[item.title] - 1 + item.images.length) % item.images.length;
+    const img = new Image();
+    img.src = item.images[prevIndex];
   }
 
   getCurrentImage(item: any): string {
