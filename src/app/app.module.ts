@@ -16,15 +16,17 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { CatalogComponent } from './pages/catalog/catalog.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCardModule } from '@angular/material/card';
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { MatInputModule } from '@angular/material/input';
 import { CarouselModule } from 'ngx-owl-carousel-o';
-import {MatSelectModule} from '@angular/material/select';
-
-
+import { MatSelectModule } from '@angular/material/select';
+import { Blog1Component } from './pages/blog/blog1/blog1.component';
+import { Blog2Component } from './pages/blog/blog2/blog2.component';
+import { Blog3Component } from './pages/blog/blog3/blog3.component';
+import { Blog4Component } from './pages/blog/blog4/blog4.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,11 @@ import {MatSelectModule} from '@angular/material/select';
     BlogComponent,
     AboutComponent,
     ContactComponent,
-    CatalogComponent
+    CatalogComponent,
+    Blog1Component,
+    Blog2Component,
+    Blog3Component,
+    Blog4Component
   ],
   imports: [
     BrowserModule,
@@ -45,12 +51,13 @@ import {MatSelectModule} from '@angular/material/select';
     MatButtonModule,
     MatIconModule,
     MatListModule,
-      MatFormFieldModule,
+    MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
     MatPaginatorModule,
     CarouselModule,
-    MatCardModule
+    MatCardModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
