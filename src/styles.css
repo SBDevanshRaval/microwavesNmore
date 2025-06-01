@@ -119,6 +119,8 @@ body {
   max-width: 1700px;
   margin: 0 auto;
   width: 100%;
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
 }
 
 .flex-container {
@@ -222,6 +224,11 @@ body {
 
   .text-3xl {
     font-size: 2rem;
+  }
+
+  .content-container {
+    padding-left: var(--spacing-sm);
+    padding-right: var(--spacing-sm);
   }
 }
 

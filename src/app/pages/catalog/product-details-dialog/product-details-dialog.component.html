@@ -1,0 +1,74 @@
+<div class="dialog-container">
+    <button mat-icon-button class="close-button" (click)="closeDialog()">
+        <mat-icon>close</mat-icon>
+    </button>
+
+    <div class="dialog-content">
+        <div class="image-section">
+            <button mat-icon-button class="nav-button prev-button" (click)="previousImage()" *ngIf="data.images.length > 1">
+                <mat-icon>chevron_left</mat-icon>
+            </button>
+            
+            <div class="image-container">
+                <img [src]="getCurrentImage()" [alt]="data.title">
+                <div class="image-indicator" *ngIf="data.images.length > 1">
+                    {{currentImageIndex + 1}} / {{data.images.length}}
+                </div>
+            </div>
+
+            <button mat-icon-button class="nav-button next-button" (click)="nextImage()" *ngIf="data.images.length > 1">
+                <mat-icon>chevron_right</mat-icon>
+            </button>
+        </div>
+
+        <div class="details-section">
+            <div class="product-main-info">
+                <h2 class="product-title">{{data.title}}</h2>
+                <p *ngIf="data.size" class="size">Size: {{data.size}}</p>
+                <p *ngIf="data.colors" class="colors">Available in {{data.colors}} colors</p>
+                <p *ngIf="data.includes" class="includes">
+                    <mat-icon class="includes-icon">add_circle</mat-icon>
+                    {{data.includes}}
+                </p>
+            </div>
+            
+            <div class="product-pricing">
+                <p *ngIf="data.msrp" class="msrp">MSRP: ${{data.msrp}}</p>
+                
+                <div *ngIf="data.wholesalePricing?.length > 0" class="wholesale-tiers">
+                    <h4>Wholesale Pricing:</h4>
+                    <ul class="tier-list">
+                        <li *ngFor="let tier of data.wholesalePricing" class="tier-item">
+                            {{tier.range}} - ${{tier.price}} each
+                        </li>
+                    </ul>
+                </div>
+
+                <div *ngIf="data.pricingTiers?.length > 0" class="pricing-tiers">
+                    <h4>Pricing:</h4>
+                    <ul class="tier-list">
+                        <li *ngFor="let tier of data.pricingTiers" class="tier-item">
+                            {{tier.range}} units - ${{tier.price}} each
+                        </li>
+                    </ul>
+                </div>
+                
+                <p *ngIf="data.wholesale && !data.wholesalePricing?.length && !data.pricingTiers?.length" class="wholesale">
+                    Price: ${{data.wholesale}}
+                </p>
+            </div>
+
+            <div class="product-details-footer">
+                <p *ngIf="data.quantity !== undefined && data.quantity !== null" 
+                   class="quantity"
+                   [ngClass]="{'low-stock': data.quantity < 5}">
+                   Stock Available: {{data.quantity}}
+                </p>
+                <p *ngIf="data.warranty" class="warranty">
+                    <mat-icon class="warranty-icon">verified</mat-icon>
+                    Includes Warranty
+                </p>
+            </div>
+        </div>
+    </div>
+</div> 

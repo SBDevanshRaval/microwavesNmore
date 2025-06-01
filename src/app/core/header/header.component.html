@@ -1,6 +1,9 @@
 <mat-toolbar  class="header-toolbar">
   <div class="container toolbar-container">
-    <span class="logo" routerLink="/">Microwaves<span class="theme-color-blue">N</span>More</span>
+    <div class="logo-container" routerLink="/">
+      <span class="logo">Microwaves<span class="theme-color-blue">N</span>More</span>
+      <span class="tagline">Premium Wholesale Supplier</span>
+    </div>
 
     <span class="spacer"></span>
 
@@ -8,7 +11,7 @@
       <a mat-button routerLink="/home" routerLinkActive="active-link">Home</a>
       <a mat-button routerLink="/catalog" routerLinkActive="active-link">Catalog</a>
       <a mat-button routerLink="/blog" routerLinkActive="active-link">Blog</a>
-      <!-- <a mat-button routerLink="/about" routerLinkActive="active-link">About Us</a> -->
+      <a mat-button routerLink="/about" routerLinkActive="active-link">About Us</a>
       <a mat-button routerLink="/contact" routerLinkActive="active-link">Contact Us</a>
     </nav>
 
@@ -24,6 +27,6 @@
   <a mat-list-item routerLink="/home" routerLinkActive="active-link" (click)="closeMobileMenu()" [routerLinkActiveOptions]="{ exact: true }">Home</a>
   <a mat-list-item routerLink="/catalog" routerLinkActive="active-link" (click)="closeMobileMenu()">Catalog</a>
   <a mat-list-item routerLink="/blog" routerLinkActive="active-link" (click)="closeMobileMenu()">Blog</a>
-  <!-- <a mat-list-item routerLink="/about" routerLinkActive="active-link" (click)="closeMobileMenu()">About Us</a> -->
+  <a mat-list-item routerLink="/about" routerLinkActive="active-link" (click)="closeMobileMenu()">About Us</a>
   <a mat-list-item routerLink="/contact" routerLinkActive="active-link" (click)="closeMobileMenu()">Contact Us</a>
 </nav>

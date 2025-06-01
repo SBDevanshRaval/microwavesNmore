@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +28,7 @@ import { Blog1Component } from './pages/blog/blog1/blog1.component';
 import { Blog2Component } from './pages/blog/blog2/blog2.component';
 import { Blog3Component } from './pages/blog/blog3/blog3.component';
 import { Blog4Component } from './pages/blog/blog4/blog4.component';
+import { ProductDetailsDialogComponent } from './pages/catalog/product-details-dialog/product-details-dialog.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import { Blog4Component } from './pages/blog/blog4/blog4.component';
     Blog1Component,
     Blog2Component,
     Blog3Component,
-    Blog4Component
+    Blog4Component,
+    ProductDetailsDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +60,8 @@ import { Blog4Component } from './pages/blog/blog4/blog4.component';
     MatPaginatorModule,
     CarouselModule,
     MatCardModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
