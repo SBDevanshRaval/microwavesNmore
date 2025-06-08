@@ -13,6 +13,10 @@
     z-index: 10;
 }
 
+
+
+
+
 .dialog-content {
     display: flex;
     flex-direction: column;
@@ -20,9 +24,7 @@
 }
 
 @media (min-width: 768px) {
-    .dialog-content {
-        flex-direction: row;
-    }
+
 }
 
 .image-section {
@@ -69,6 +71,7 @@
     transform: translateY(-50%);
     background: rgba(255, 255, 255, 0.9) !important;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
 }
 
 .prev-button {
@@ -125,6 +128,7 @@
     padding: 16px;
     background: #f5f5f5;
     border-radius: 8px;
+    overflow-x: auto;
 }
 
 .pricing-tiers h4 {
@@ -138,6 +142,19 @@
     margin: 0;
 }
 
+.bundle-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 20px;
+  }
+
+  .bundle-table td, .bundle-table th {
+    padding: 10px;
+    white-space: normal;      /* Allow wrapping */
+    word-wrap: break-word;    /* Break long words if needed */
+    max-width: 100%;          /* Prevent it from shrinking too much */
+  }
+  
 .tier-item {
     padding: 8px 0;
     border-bottom: 1px solid #e0e0e0;

@@ -52,6 +52,31 @@
                         </li>
                     </ul>
                 </div>
+
+
+                <div *ngIf="data.toasterBundle?.length > 0" class="pricing-tiers">
+                    <h4>Products in Bundle:</h4>
+                    <table class="tier-list bundle-table">
+                        <tr>
+                            <th>Name</th>
+                            <th>Brand</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Unit Price</th>
+                            <th>Total</th>
+                        </tr>
+                        <tr *ngFor="let tier of data.toasterBundle" class="tier-item">
+                            <td><strong>    {{tier.name}}</strong></td>
+                            <td>{{tier.brand}}</td>
+                            <td>{{tier.quantity}}</td>
+                            <td>${{tier.price}}</td>
+                            <td>${{tier.unitPrice}}</td>
+                            <td>${{tier.total}}</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                
                 
                 <p *ngIf="data.wholesale && !data.wholesalePricing?.length && !data.pricingTiers?.length" class="wholesale">
                     Price: ${{data.wholesale}}

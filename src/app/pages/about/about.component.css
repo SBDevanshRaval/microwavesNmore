@@ -155,6 +155,10 @@
     color: #007bff;
 }
 
+.display-4{
+    font-size: 1.4rem!important;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero-section,
@@ -188,6 +192,9 @@
     .about-image-container,
     .contact-image-container {
         height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .choose-us-image-container {

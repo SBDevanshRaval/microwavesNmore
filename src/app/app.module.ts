@@ -29,6 +29,7 @@ import { Blog2Component } from './pages/blog/blog2/blog2.component';
 import { Blog3Component } from './pages/blog/blog3/blog3.component';
 import { Blog4Component } from './pages/blog/blog4/blog4.component';
 import { ProductDetailsDialogComponent } from './pages/catalog/product-details-dialog/product-details-dialog.component';
+import { BundleComponent } from './pages/bundle/bundle.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { ProductDetailsDialogComponent } from './pages/catalog/product-details-d
     Blog2Component,
     Blog3Component,
     Blog4Component,
-    ProductDetailsDialogComponent
+    ProductDetailsDialogComponent,
+    BundleComponent
   ],
   imports: [
     BrowserModule,
