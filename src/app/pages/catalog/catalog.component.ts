@@ -1,15 +1,14 @@
-import { Component, ViewChild } from '@angular/core';
-import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { ProductDetailsDialogComponent } from './product-details-dialog/product-details-dialog.component';
 
 @Component({
   selector: 'app-catalog',
   templateUrl: './catalog.component.html',
   styleUrls: ['./catalog.component.css']
 })
-export class CatalogComponent {
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-
+export class CatalogComponent implements OnInit {
   // Track loading state for each image
   imageLoadingState: { [key: string]: boolean } = {};
   
@@ -39,22 +38,12 @@ export class CatalogComponent {
       msrp: 149,
       quantity: 10,
       warranty: true,
-      wholesalePricing: [
-        { condition: 'Each', price: 69 },
-        { condition: 'All 10', price: 57 }
+      pricingTiers: [
+        { range: '2-6 units', price: 69 },
+        { range: '6-12 units', price: 57 }
       ]
     },
-    { 
-      title: 'So Yummy Bella Air Fryer - 2 QT', 
-      images: ['assets/products/4_1.jpg'], 
-      category: 'air fryer',
-      size: '2 QT',
-      colors: 3,
-      quantity: 10,
-      wholesale: 22,
-      msrp: 59,
-      warranty: false
-    },
+
     { 
       title: 'fohere waffle maker', 
       images: ['assets/products/5_1.jpg','assets/products/5_2.jpg','assets/products/5_3.jpg'], 
@@ -77,7 +66,7 @@ export class CatalogComponent {
       msrp: 154,
       quantity: 60,
       warranty: false,
-      wholesalePricing: [
+      pricingTiers: [
         { range: '2-6 units', price: 69 },
         { range: '6-12 units', price: 59 },
         { range: 'All 60 units', price: 39 }
@@ -98,9 +87,9 @@ export class CatalogComponent {
       quantity: 30,
       warranty: true,
       pricingTiers: [
-        { range: '2-6', price: 89 },
-        { range: '6-12', price: 79 },
-        { range: 'All 30', price: 65 }
+        { range: '2-6 units', price: 89 },
+        { range: '6-12 units', price: 79 },
+        { range: 'All 30 units', price: 65 }
       ]
     },
     { 
@@ -112,7 +101,7 @@ export class CatalogComponent {
     },
     { 
       title: 'Hisense 3.3 fridge', 
-      images: ['assets/products/11_1.jpg','assets/products/11_2.jpg','assets/products/11_3.jpg'], 
+      images: ['assets/products/11_3.png','assets/products/11_2.png','assets/products/11_1.png'], 
       price: 154, 
       category: 'fridge',
       quantity: 10 
@@ -122,7 +111,7 @@ export class CatalogComponent {
       images: ['assets/hisense-1.6.jpg'], 
       price: 129, 
       category: 'fridge',
-      quantity: 1 
+      quantity: 5
     },
     { 
       title: 'frigidaire 7.0 white chest freezer', 
@@ -136,7 +125,7 @@ export class CatalogComponent {
 
   paginatedItems: any[] = [];
   pageSize = 6;
-  pageIndex = 0;
+  currentPage = 1;
   searchTerm: string = '';
   selectedCategory: string = '';
   
@@ -145,7 +134,10 @@ export class CatalogComponent {
   // Track current image index for each item
   currentImageIndex: { [key: string]: number } = {};
 
-  constructor(private route: ActivatedRoute) {
+  constructor(
+    private route: ActivatedRoute,
+    private dialog: MatDialog
+  ) {
     // Initialize current image index and loading state for each item
     this.items.forEach(item => {
       this.currentImageIndex[item.title] = 0;
@@ -159,17 +151,30 @@ export class CatalogComponent {
       };
     });
 
-    // Subscribe to query params
+    // Force scroll to top on component creation
+    this.forceScrollToTop();
+  }
+
+  ngOnInit() {
+    // Reset scroll position when component initializes
+    this.forceScrollToTop();
+
+    // Initialize the paginated items
+    this.updatePaginatedItems();
+
+    // Subscribe to query params and scroll to top on navigation
     this.route.queryParams.subscribe(params => {
       if (params['category']) {
         this.selectedCategory = params['category'];
         this.updatePaginatedItems();
+        this.forceScrollToTop();
       }
     });
   }
 
   ngAfterViewInit() {
-    this.updatePaginatedItems();
+    // Ensure scroll to top after view initialization
+    this.forceScrollToTop();
   }
 
   get filteredItems() {
@@ -182,29 +187,77 @@ export class CatalogComponent {
     });
   }
 
+  get totalPages(): number {
+    return Math.ceil(this.filteredItems.length / this.pageSize);
+  }
+
+  getPageNumbers(): number[] {
+    const totalPages = this.totalPages;
+    const currentPage = this.currentPage;
+    const pages: number[] = [];
+    
+    // Show maximum 5 page numbers
+    if (totalPages <= 5) {
+      // If total pages is 5 or less, show all pages
+      for (let i = 1; i <= totalPages; i++) {
+        pages.push(i);
+      }
+    } else {
+      // Always show first page
+      pages.push(1);
+      
+      if (currentPage <= 3) {
+        // If current page is near the start
+        pages.push(2, 3, 4, totalPages);
+      } else if (currentPage >= totalPages - 2) {
+        // If current page is near the end
+        pages.push(
+          totalPages - 3,
+          totalPages - 2,
+          totalPages - 1,
+          totalPages
+        );
+      } else {
+        // If current page is in the middle
+        pages.push(
+          currentPage - 1,
+          currentPage,
+          currentPage + 1,
+          totalPages
+        );
+      }
+    }
+    
+    return pages;
+  }
+
+  goToPage(page: number) {
+    if (page >= 1 && page <= this.totalPages) {
+      this.currentPage = page;
+      this.updatePaginatedItems();
+      this.forceScrollToTop();
+    }
+  }
+
   updatePaginatedItems() {
     const filtered = this.filteredItems;
-    const start = this.pageIndex * this.pageSize;
+    const start = (this.currentPage - 1) * this.pageSize;
     const end = start + this.pageSize;
     this.paginatedItems = filtered.slice(start, end);
   }
 
   onSearch(event: Event) {
     this.searchTerm = (event.target as HTMLInputElement).value;
-    this.pageIndex = 0;
+    this.currentPage = 1;
     this.updatePaginatedItems();
+    this.forceScrollToTop();
   }
 
   onCategoryChange(category: string) {
     this.selectedCategory = category;
-    this.pageIndex = 0;
+    this.currentPage = 1;
     this.updatePaginatedItems();
-  }
-
-  onPageChange(event: PageEvent) {
-    this.pageIndex = event.pageIndex;
-    this.pageSize = event.pageSize;
-    this.updatePaginatedItems();
+    this.forceScrollToTop();
   }
 
   onImageLoad(item: any) {
@@ -239,5 +292,26 @@ export class CatalogComponent {
 
   getCurrentImage(item: any): string {
     return item.images[this.currentImageIndex[item.title]];
+  }
+
+  private forceScrollToTop() {
+    // Using multiple approaches to ensure scroll to top works
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    const container = document.querySelector('.home-page-main-container');
+    if (container) {
+      container.scrollTop = 0;
+    }
+  }
+
+  openProductDetails(product: any): void {
+    const dialogRef = this.dialog.open(ProductDetailsDialogComponent, {
+      width: '90vw',
+      maxWidth: '1200px',
+      height: '90vh',
+      data: product,
+      panelClass: 'product-dialog-container'
+    });
   }
 }

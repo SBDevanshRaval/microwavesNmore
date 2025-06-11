@@ -25,102 +25,55 @@
     </div>
 
     <div class="items-list-container">
+        <h1 class="catalog-page-title">Catalog</h1>
         <div class="mat-grid">
-            <mat-card class="card" *ngFor="let item of paginatedItems">
-                <div class="carousel-container" role="region" [attr.aria-label]="'Image carousel for ' + item.title">
-                    <button 
-                        class="nav-button prev-button" 
-                        (click)="previousImage(item)"
-                        [attr.aria-label]="'Previous image for ' + item.title">
-                        <mat-icon>chevron_left</mat-icon>
-                    </button>
-                    
-                    <div class="image-container" [class.loading]="isImageLoading(item)">
-                        <!-- Loading Skeleton -->
-                        <div class="image-skeleton" *ngIf="isImageLoading(item)">
-                            <mat-spinner diameter="40"></mat-spinner>
-                        </div>
-                        
-                        <img 
-                            mat-card-image 
-                            [src]="getCurrentImage(item)" 
-                            [alt]="item.title"
-                            loading="lazy"
-                            (load)="onImageLoad(item)"
-                            [style.opacity]="isImageLoading(item) ? 0 : 1"
-                            width="300"
-                            height="300">
-                        <div class="image-indicator" aria-live="polite">
-                            {{currentImageIndex[item.title] + 1}} / {{item.images.length}}
-                        </div>
+            <mat-card class="card" *ngFor="let item of paginatedItems" (click)="openProductDetails(item)">
+                <div class="image-container" [class.loading]="isImageLoading(item)">
+                    <!-- Loading Skeleton -->
+                    <div class="image-skeleton" *ngIf="isImageLoading(item)">
+                        <mat-spinner diameter="40"></mat-spinner>
                     </div>
-
-                    <button 
-                        class="nav-button next-button" 
-                        (click)="nextImage(item)"
-                        [attr.aria-label]="'Next image for ' + item.title">
-                        <mat-icon>chevron_right</mat-icon>
-                    </button>
+                    
+                    <img 
+                        mat-card-image 
+                        [src]="getCurrentImage(item)" 
+                        [alt]="item.title"
+                        loading="lazy"
+                        (load)="onImageLoad(item)"
+                        [style.opacity]="isImageLoading(item) ? 0 : 1">
                 </div>
                 
-                <mat-card-content class="product-details">
-                    <div class="product-main-info">
-                        <h3 *ngIf="item.title" class="product-title">{{item.title}}</h3>
-                        <p *ngIf="item.size" class="size">Size: {{item.size}}</p>
-                        <p *ngIf="item.colors" class="colors">Available in {{item.colors}} colors</p>
-                        <p *ngIf="item.includes" class="includes">
-                            <mat-icon class="includes-icon">add_circle</mat-icon>
-                            {{item.includes}}
-                        </p>
-                    </div>
-                    
-                    <div class="product-pricing">
-                        <p *ngIf="item.msrp" class="msrp">MSRP: ${{item.msrp}}</p>
-                        
-                        <div *ngIf="item.wholesalePricing?.length > 0" class="wholesale-tiers">
-                            <h4>Wholesale Pricing:</h4>
-                            <ul class="tier-list">
-                                <li *ngFor="let tier of item.wholesalePricing" class="tier-item">
-                                    {{tier.range}} - ${{tier.price}} each
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div *ngIf="item.pricingTiers?.length > 0" class="wholesale-tiers">
-                            <h4>Wholesale Pricing:</h4>
-                            <ul class="tier-list">
-                                <li *ngFor="let tier of item.pricingTiers" class="tier-item">
-                                    {{tier.range}} units - ${{tier.price}} each
-                                </li>
-                            </ul>
-                        </div>
-                        
-                        <p *ngIf="item.wholesale && !item.wholesalePricing?.length && !item.pricingTiers?.length" class="wholesale">
-                            Wholesale Price: ${{item.wholesale}}
-                        </p>
-                    </div>
-
-                    <div class="product-details-footer">
-                        <p *ngIf="item.quantity !== undefined && item.quantity !== null" 
-                           class="quantity"
-                           [ngClass]="{'low-stock': item.quantity < 5}">
-                           Stock Available: {{item.quantity}}
-                        </p>
-                        <p *ngIf="item.warranty" class="warranty">
-                            <mat-icon class="warranty-icon">verified</mat-icon>
-                            Includes Warranty
-                        </p>
-                    </div>
+                <mat-card-content>
+                    <h3 class="product-title">{{item.title}}</h3>
                 </mat-card-content>
             </mat-card>
         </div>
 
-        <mat-paginator
-            [length]="filteredItems.length"
-            [pageSize]="pageSize"
-            [pageSizeOptions]="[6, 12, 18, 24, 30]"
-            (page)="onPageChange($event)"
-            aria-label="Select page">
-        </mat-paginator>
+        <div class="pagination-container">
+            <button mat-icon-button 
+                    [disabled]="currentPage === 1"
+                    (click)="goToPage(currentPage - 1)"
+                    aria-label="Previous page">
+                <mat-icon>chevron_left</mat-icon>
+            </button>
+
+            <div class="page-numbers">
+                <button mat-button 
+                        *ngFor="let page of getPageNumbers()"
+                        [class.active]="page === currentPage"
+                        (click)="goToPage(page)"
+                        [attr.aria-label]="'Go to page ' + page"
+                        [attr.aria-current]="page === currentPage ? 'page' : null">
+                    {{page}}
+                </button>
+            </div>
+
+            <button mat-icon-button 
+                    [disabled]="currentPage === totalPages"
+                    (click)="goToPage(currentPage + 1)"
+                    aria-label="Next page">
+                <mat-icon>chevron_right</mat-icon>
+            </button>
+        </div>
     </div>
 </div>

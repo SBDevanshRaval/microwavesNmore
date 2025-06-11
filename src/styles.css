@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Pacifico&display=swap');
 :root {
   --theme-color-blue: #2196F3;
   --theme-color-black: rgb(49, 49, 49);
@@ -119,6 +120,8 @@ body {
   max-width: 1700px;
   margin: 0 auto;
   width: 100%;
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
 }
 
 .flex-container {
@@ -222,6 +225,11 @@ body {
 
   .text-3xl {
     font-size: 2rem;
+  }
+
+  .content-container {
+    padding-left: var(--spacing-sm);
+    padding-right: var(--spacing-sm);
   }
 }
 
