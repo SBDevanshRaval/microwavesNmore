@@ -43,19 +43,7 @@ export class CatalogComponent implements OnInit {
         { range: '6-12 units', price: 57 }
       ]
     },
-    { 
-      title: 'So Yummy Bella Air Fryer - 2 QT', 
-      images: ['assets/products/4_1.jpg'], 
-      category: 'air fryer',
-      size: '2 QT',
-      colors: 3,
-      quantity: 10,
-      pricingTiers: [
-        { range: '10 units', price: 22 },
-      ],
-      msrp: 59,
-      warranty: false
-    },
+
     { 
       title: 'fohere waffle maker', 
       images: ['assets/products/5_1.jpg','assets/products/5_2.jpg','assets/products/5_3.jpg'], 
@@ -113,7 +101,7 @@ export class CatalogComponent implements OnInit {
     },
     { 
       title: 'Hisense 3.3 fridge', 
-      images: ['assets/products/11_1.jpg','assets/products/11_2.jpg','assets/products/11_3.jpg'], 
+      images: ['assets/products/11_3.png','assets/products/11_2.png','assets/products/11_1.png'], 
       price: 154, 
       category: 'fridge',
       quantity: 10 
@@ -123,7 +111,7 @@ export class CatalogComponent implements OnInit {
       images: ['assets/hisense-1.6.jpg'], 
       price: 129, 
       category: 'fridge',
-      quantity: 1 
+      quantity: 5
     },
     { 
       title: 'frigidaire 7.0 white chest freezer', 

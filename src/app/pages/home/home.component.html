@@ -1,4 +1,12 @@
 <div class="home-container home-page-main-container">
+    <div class="hero-banner-text-container">
+        
+        <div class="hero-banner-text">
+            <span>BEST BRAND...</span>
+            <span>BEST PRICE...</span>
+            <span>BEST GUARANTEE</span>
+        </div>
+    </div>
     <div class="hero-banner">
         <div class="hero-banner-left">
             <span class="hero-banner-left-title">Smart Living, <br>Smart Prices</span>
@@ -7,7 +15,7 @@
                 Quality products designed to fit your lifestyle and your budget.</span>
             <div class="hero-cta-buttons">
                 <button class="primary-btn" routerLink="/catalog">Shop Now</button>
-                <button class="secondary-btn"  routerLink="/blog">Learn More</button>
+                <button class="secondary-btn" routerLink="/blog">Learn More</button>
             </div>
         </div>
         <div class="hero-banner-right">
@@ -23,7 +31,8 @@
         <div class="category-title-right">
             <div class="category-content">
                 <span>Explore Categories</span>
-                <p class="category-description">Browse through our carefully curated collection of premium appliances</p>
+                <p class="category-description">Browse through our carefully curated collection of premium appliances
+                </p>
                 <div class="category-grid">
                     <div class="category-card" (click)="navigateToCategory('Fridge')">
                         <div class="category-content">
@@ -48,25 +57,19 @@
         </div>
     </div>
 
-    <div class="slider-container">
-        <div class="section-header">
-            <h2 class="section-title">Featured Products</h2>
-            <p class="section-subtitle">Discover our most popular and trending items</p>
-        </div>
-        <owl-carousel-o [options]="options">
-            <ng-container *ngFor="let image of images">
-                <ng-template carouselSlide [id]="image.id">
-                    <div class="product-card">
-                        <div class="product-image-wrapper">
-                            <img [src]="image.src" [alt]="image.alt" class="product-image" />
-                        </div>
-                    </div>
-                </ng-template>
-            </ng-container>
-        </owl-carousel-o>
+    <div class="section-header">
+        <h2 class="section-title">Featured Products</h2>
+        <p class="section-subtitle">Discover Our Most Popular and Trending Items
+            Check out the top picks everyone’s talking about! From customer favorites to the latest trends, these items are loved for their quality, style, and value. Find your next favorite today!</p>
     </div>
+    <owl-carousel-o [options]="options">
+        <ng-container *ngFor="let image of images">
+            <ng-template carouselSlide [id]="image.id">
+                <img [src]="image.src" [alt]="image.alt" class="product-image" />
+            </ng-template>
+        </ng-container>
+    </owl-carousel-o>
 
-    <!-- Customer Reviews Section (Temporarily Hidden)
     <div class="customer-reviews-section">
         <div class="section-header">
             <h2 class="section-title">What Our Customers Say</h2>
@@ -74,12 +77,14 @@
         </div>
         
         <div class="reviews-container">
+            
             <div class="review-card">
                 <div class="review-header">
                     <div class="reviewer-info">
                         <span class="reviewer-icon material-symbols-outlined">account_circle</span>
                         <div class="reviewer-details">
-                            <h4>Sarah Johnson</h4>
+                            <h4>KCSS community staff.
+                            </h4>
                             <div class="stars">
                                 <span class="material-symbols-outlined filled">star</span>
                                 <span class="material-symbols-outlined filled">star</span>
@@ -90,50 +95,34 @@
                         </div>
                     </div>
                 </div>
-                <p class="review-text">"The smart refrigerator I bought has transformed my kitchen! The energy efficiency is remarkable, and the smart features make grocery management a breeze. Best investment for my home this year!"</p>
-                <span class="product-bought">Purchased: Smart Refrigerator Pro X1</span>
+                <p class="review-text">"From the staff and students at KCSS community classroom, we would like to thank you for your kindness and generosity with all of the gifts and donations.
+                    As a classroom that works daily on independence and life skills, the air fryer, dishes, and plates are very much appreciated and valued in our cooking program.
+                    The ring toss game was a wonderful addition to our gym program.
+                    Thank you again for your kindness. With your donation, we can continue to make a positive difference in our class and community.
+                    With many thanks,
+                    KCSS community staff."</p>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <span class="reviewer-icon material-symbols-outlined">account_circle</span>
+                        <div class="reviewer-details">
+                            <h4>King City S.S</h4>
+                            <div class="stars">
+                                <span class="material-symbols-outlined filled">star</span>
+                                <span class="material-symbols-outlined filled">star</span>
+                                <span class="material-symbols-outlined filled">star</span>
+                                <span class="material-symbols-outlined filled">star</span>
+                                <span class="material-symbols-outlined filled">star</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="review-text">"Thank you for the Air Fryer and Pans"</p>
             </div>
 
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="reviewer-info">
-                        <span class="reviewer-icon material-symbols-outlined">account_circle</span>
-                        <div class="reviewer-details">
-                            <h4>Michael Chen</h4>
-                            <div class="stars">
-                                <span class="material-symbols-outlined filled">star</span>
-                                <span class="material-symbols-outlined filled">star</span>
-                                <span class="material-symbols-outlined filled">star</span>
-                                <span class="material-symbols-outlined filled">star</span>
-                                <span class="material-symbols-outlined filled">star</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <p class="review-text">"As a chef, I'm particular about my kitchen appliances. The air fryer exceeded my expectations! Perfect crisp, minimal oil, and the digital controls are intuitive. A must-have for health-conscious cooking!"</p>
-                <span class="product-bought">Purchased: Digital Air Fryer XL</span>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="reviewer-info">
-                        <span class="reviewer-icon material-symbols-outlined">account_circle</span>
-                        <div class="reviewer-details">
-                            <h4>Emma Rodriguez</h4>
-                            <div class="stars">
-                                <span class="material-symbols-outlined filled">star</span>
-                                <span class="material-symbols-outlined filled">star</span>
-                                <span class="material-symbols-outlined filled">star</span>
-                                <span class="material-symbols-outlined filled">star</span>
-                                <span class="material-symbols-outlined half">star_half</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <p class="review-text">"The multi-cooker is a game-changer for busy families! From slow-cooking to pressure cooking, it does it all. The recipes turn out perfect every time, and the timer feature is so convenient!"</p>
-                <span class="product-bought">Purchased: Smart Multi-Cooker 7-in-1</span>
-            </div>
+ 
         </div>
     </div>
-    -->
+   
 </div>

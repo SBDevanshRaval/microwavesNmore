@@ -13,6 +13,7 @@
     </div>
 
         <div class="items-list-container">
+            <h1 class="bundle-page-title">BUNDLES</h1>
         <div class="mat-grid">
             <mat-card class="card" *ngFor="let item of paginatedItems" (click)="openProductDetails(item)">
                 <div class="image-container" [class.loading]="isImageLoading(item)">
@@ -32,6 +33,7 @@
                 
                 <mat-card-content>
                     <h3 class="product-title">{{item.title}}</h3>
+                    <div class="bundle-price"><strong>Bundle Price: </strong>${{item.bundle_price}}</div>
                 </mat-card-content>
             </mat-card>
         </div>

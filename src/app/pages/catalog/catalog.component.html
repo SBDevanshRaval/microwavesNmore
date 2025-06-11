@@ -25,6 +25,7 @@
     </div>
 
     <div class="items-list-container">
+        <h1 class="catalog-page-title">Catalog</h1>
         <div class="mat-grid">
             <mat-card class="card" *ngFor="let item of paginatedItems" (click)="openProductDetails(item)">
                 <div class="image-container" [class.loading]="isImageLoading(item)">

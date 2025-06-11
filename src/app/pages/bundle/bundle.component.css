@@ -25,6 +25,10 @@
     margin: 0 auto;
 }
 
+.bundle-page-title {
+    text-align: center;
+}
+
 .card {
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -66,7 +70,7 @@
 }
 
 .product-title {
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin: 12px 0;
     color: #333;
     text-align: center;
@@ -74,6 +78,10 @@
     line-height: 1.4;
     min-height: 2.8em; /* Allows for 2 lines of text */
     word-wrap: break-word;
+}
+
+.bundle-price {
+    text-align: center;
 }
 
 mat-form-field {
@@ -124,10 +132,10 @@ mat-form-field {
 }
 
 /* Dialog styles */
-::ng-deep .product-dialog-container {
-    mat-dialog-container {
+::ng-deep .product-dialog-container   mat-dialog-container {
+   
         padding: 0;
         border-radius: 12px;
         overflow: hidden;
-    }
+    
 }

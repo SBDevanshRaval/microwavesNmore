@@ -80,3 +80,17 @@ src/
 │   └── app.component.ts  
 ├── assets/                   ← images, icons, etc.  
 └── styles.css                ← global CSS styles  
+
+
+---------------------------------------------------------------------------------------
+.htaccess
+
+RewriteEngine on
+RewriteBase /
+
+# Ensure only non-existent URLs are redirected to index.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.html [L]
+
+---------------------------------------------------------------------------------------

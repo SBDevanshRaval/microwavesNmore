@@ -9,6 +9,11 @@
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
+.catalog-page-title {
+    text-align: center;
+    padding: 20px ;
+}
+
 @media (max-width: 768px) {
     .filter-container {
         flex-direction: column;
@@ -124,10 +129,10 @@ mat-form-field {
 }
 
 /* Dialog styles */
-::ng-deep .product-dialog-container {
-    mat-dialog-container {
+::ng-deep .product-dialog-container mat-dialog-container  {
+    
         padding: 0;
         border-radius: 12px;
         overflow: hidden;
-    }
+    
 }

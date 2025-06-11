@@ -22,16 +22,15 @@ export class BundleComponent {
   bundles = [
     {
       title: 'Toaster Bundle',
+      bundle_price: 334.6,
       images: ['assets/products/bundle/toaster_bundle.png'],
       category: 'toaster',
-
-        toasterBundle : [
+        bulk : [
         {
           name: 'Toastmaster 4-Slice Toaster Oven',
           id: 1,
           brand: 'Select Brands',
           quantity: 1,
-          price: 44,
           unitPrice: 15.4,
           total: 15.4
         },
@@ -40,7 +39,6 @@ export class BundleComponent {
           id: 2,
           brand: 'Walmart',
           quantity: 1,
-          price: 129,
           unitPrice: 45.15,
           total: 45.15
         },
@@ -49,7 +47,6 @@ export class BundleComponent {
           id: 3,
           brand: 'Best Buy',
           quantity: 1,
-          price: 39,
           unitPrice: 13.65,
           total: 13.65
         },
@@ -58,7 +55,6 @@ export class BundleComponent {
           id: 4,
           brand: 'Cuisinart',
           quantity: 1,
-          price: 119,
           unitPrice: 41.65,
           total: 41.65
         },
@@ -67,7 +63,6 @@ export class BundleComponent {
           id: 5,
           brand: 'Costco',
           quantity: 1,
-          price: 39,
           unitPrice: 13.65,
           total: 13.65
         },
@@ -76,7 +71,6 @@ export class BundleComponent {
           id: 6,
           brand: 'Crate and Barrel',
           quantity: 1,
-          price: 159,
           unitPrice: 55.65,
           total: 55.65
         },
@@ -85,7 +79,6 @@ export class BundleComponent {
           id: 7,
           brand: 'eBay',
           quantity: 4,
-          price: 43,
           unitPrice: 15.05,
           total: 60.2
         },
@@ -94,7 +87,6 @@ export class BundleComponent {
           id: 8,
           brand: 'Amazon',
           quantity: 2,
-          price: 74,
           unitPrice: 25.9,
           total: 51.8
         },
@@ -103,7 +95,6 @@ export class BundleComponent {
           id: 9,
           brand: 'Target',
           quantity: 2,
-          price: 19,
           unitPrice: 6.65,
           total: 13.3
         },
@@ -112,12 +103,51 @@ export class BundleComponent {
           id: 10,
           brand: 'FOHERE',
           quantity: 1,
-          price: 69,
           unitPrice: 24.15,
           total: 24.15
         }
       ]
     },
+    {
+      title: 'Germ Guardian ',
+      bundle_price: 2106,
+      images: ['assets/products/bundle/germ_bundle.png'],
+      category: 'air purifier',
+      bulk : [
+        {
+          name: 'GermGuardian 4-in-1 Air Purifier (AC4100DBLX)',
+          id: 1,
+          brand: 'FOHERE',
+          quantity: 54,
+          unitPrice: 39,
+          total: 2106
+        }
+      ]
+    },
+    {
+      title: 'Microwave',
+      bundle_price: 917,
+      images: ['assets/products/bundle/microwave_bundle.png'],
+      category: 'microwave',
+      note: "60 days warranty can be purchased for each microwave for just extra 5$ per unit",
+      bulk : [
+        {
+          name: 'Hamilton Beach Microwave 0.7cc',
+          id: 1,
+          quantity: 9,
+        },
+        {
+          name: 'WestingHouse Microwave 0.9cc',
+          id: 2,
+          quantity: 3,
+        },
+        {
+          name: 'Hamilton Beach Microwave 1.1cc',
+          id: 3,
+          quantity: 5,
+        }
+      ]
+    }
      
   ];
 
