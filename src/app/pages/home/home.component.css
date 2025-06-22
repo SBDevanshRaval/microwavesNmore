@@ -210,7 +210,6 @@
     height: 600px;
     width: 400px;
     border-radius: 5px;
-    box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
@@ -452,7 +451,7 @@
 ::ng-deep .owl-next {
     width: 52px !important;
     height: 52px !important;
-    background: rgba(99,102,241,0.85) !important;
+    background: rgba(95, 164, 255, 0.85) !important;
     border-radius: 50% !important;
     box-shadow: 0 4px 16px rgba(99,102,241,0.12) !important;
     display: flex !important;
@@ -467,7 +466,7 @@
 
 ::ng-deep .owl-prev:hover,
 ::ng-deep .owl-next:hover {
-    background: linear-gradient(135deg, #6366f1 0%, #60a5fa 100%) !important;
+    background: linear-gradient(135deg, #63b1f1 0%, #60a5fa 100%) !important;
     color: #fff !important;
     transform: scale(1.13);
     box-shadow: 0 8px 24px rgba(99,102,241,0.18) !important;
@@ -784,7 +783,7 @@
     }
 
     .hero-banner-text span {
-        font-size: 1.3rem;
+        font-size: 2.2rem;
         color: rgb(255, 252, 252);
         
     }

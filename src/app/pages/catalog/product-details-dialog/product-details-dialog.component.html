@@ -60,12 +60,16 @@
                         <tr>
                             <th>Name</th>
                             <th>Quantity</th>
+                            <th>Retail Price</th>
+                            <th>Total Retail Price</th>
                             <th>Mnm Price/Unit</th>
-                            <th>Total</th>
+                            <th>Total Wholesale Price</th>
                         </tr>
                         <tr *ngFor="let tier of data.bulk" class="tier-item">
                             <td><strong>    {{tier.name}}</strong></td>
                             <td>{{tier.quantity ? tier.quantity : '-'}}</td>
+                            <td>{{tier.retailPrice ? '$' +tier.retailPrice: '-'}}</td>
+                            <td>{{tier.retailTotal ?'$' + tier.retailTotal: '-'}}</td>
                             <td>{{tier.unitPrice ? '$' + tier.unitPrice : '-'}}</td>
                             <td>{{tier.total ? '$' + tier.total : '-'}}</td>
                         </tr>

@@ -115,7 +115,7 @@ export class CatalogComponent implements OnInit {
     },
     { 
       title: 'frigidaire 7.0 white chest freezer', 
-      images: ['assets/frigidaire.jpg'], 
+      images: ['assets/products/freezer.png'], 
       price: 449, 
       category: 'fridge',
       quantity: 7 

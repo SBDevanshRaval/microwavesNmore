@@ -30,6 +30,7 @@ import { Blog3Component } from './pages/blog/blog3/blog3.component';
 import { Blog4Component } from './pages/blog/blog4/blog4.component';
 import { ProductDetailsDialogComponent } from './pages/catalog/product-details-dialog/product-details-dialog.component';
 import { BundleComponent } from './pages/bundle/bundle.component';
+import { WeekBundleComponent } from './shared/week-bundle/week-bundle.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { BundleComponent } from './pages/bundle/bundle.component';
     Blog3Component,
     Blog4Component,
     ProductDetailsDialogComponent,
-    BundleComponent
+    BundleComponent,
+    WeekBundleComponent
   ],
   imports: [
     BrowserModule,

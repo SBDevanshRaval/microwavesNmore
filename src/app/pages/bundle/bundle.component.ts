@@ -21,137 +21,689 @@ export class BundleComponent {
 
   bundles = [
     {
-      title: 'Toaster Bundle',
-      bundle_price: 334.6,
-      images: ['assets/products/bundle/toaster_bundle.png'],
-      category: 'toaster',
-        bulk : [
-        {
-          name: 'Toastmaster 4-Slice Toaster Oven',
-          id: 1,
-          brand: 'Select Brands',
-          quantity: 1,
-          unitPrice: 15.4,
-          total: 15.4
-        },
-        {
-          name: 'Hamilton Beach 2-in-1 Oven & Toaster',
-          id: 2,
-          brand: 'Walmart',
-          quantity: 1,
-          unitPrice: 45.15,
-          total: 45.15
-        },
-        {
-          name: 'CRUXGG 2-Slice Toaster',
-          id: 3,
-          brand: 'Best Buy',
-          quantity: 1,
-          unitPrice: 13.65,
-          total: 13.65
-        },
-        {
-          name: 'Cuisinart 2-Slice Classic Metal Toaster',
-          id: 4,
-          brand: 'Cuisinart',
-          quantity: 1,
-          unitPrice: 41.65,
-          total: 41.65
-        },
-        {
-          name: 'Cuisinart Custom Select 2-Slice Toaster',
-          id: 5,
-          brand: 'Costco',
-          quantity: 1,
-          unitPrice: 13.65,
-          total: 13.65
-        },
-        {
-          name: 'Cuisinart Classic 4-Slice Metal Toaster',
-          id: 6,
-          brand: 'Crate and Barrel',
-          quantity: 1,
-          unitPrice: 55.65,
-          total: 55.65
-        },
-        {
-          name: 'Figmint 2-Slice Wide Slot Toaster',
-          id: 7,
-          brand: 'eBay',
-          quantity: 4,
-          unitPrice: 15.05,
-          total: 60.2
-        },
-        {
-          name: 'Bella 2-Slice Slim Long Slot Toaster',
-          id: 8,
-          brand: 'Amazon',
-          quantity: 2,
-          unitPrice: 25.9,
-          total: 51.8
-        },
-        {
-          name: 'Kitchensmith by Bella 4-Slice Toaster',
-          id: 9,
-          brand: 'Target',
-          quantity: 2,
-          unitPrice: 6.65,
-          total: 13.3
-        },
-        {
-          name: 'FOHERE Toaster TA7009C-UL',
-          id: 10,
-          brand: 'FOHERE',
-          quantity: 1,
-          unitPrice: 24.15,
-          total: 24.15
-        }
-      ]
+    title: 'Toaster Bundle',
+    bundle_price: 334.6,
+    retail_total: 734,
+    images: ['assets/products/bundle/toaster_bundle.png'],
+    category: 'toaster',
+    bulk: [
+    {
+      name: 'Toastmaster 4-Slice Toaster Oven',
+      id: 1,
+      brand: 'Select Brands',
+      quantity: 1,
+      retailPrice: 44,
+      retailTotal: 44,
+      unitPrice: 15.4,
+      total: 15.4
     },
     {
-      title: 'Germ Guardian ',
-      bundle_price: 2106,
-      images: ['assets/products/bundle/germ_bundle.png'],
-      category: 'air purifier',
-      bulk : [
-        {
-          name: 'GermGuardian 4-in-1 Air Purifier (AC4100DBLX)',
-          id: 1,
-          brand: 'FOHERE',
-          quantity: 54,
-          unitPrice: 39,
-          total: 2106
-        }
-      ]
+      name: 'Hamilton Beach 2-in-1 Oven & Toaster',
+      id: 2,
+      brand: 'Walmart',
+      quantity: 1,
+      retailPrice: 129,
+      retailTotal: 129,
+      unitPrice: 45.15,
+      total: 45.15
     },
     {
-      title: 'Microwave',
-      bundle_price: 917,
-      images: ['assets/products/bundle/microwave_bundle.png'],
-      category: 'microwave',
-      note: "60 days warranty can be purchased for each microwave for just extra 5$ per unit",
-      bulk : [
-        {
-          name: 'Hamilton Beach Microwave 0.7cc',
-          id: 1,
-          quantity: 9,
-        },
-        {
-          name: 'WestingHouse Microwave 0.9cc',
-          id: 2,
-          quantity: 3,
-        },
-        {
-          name: 'Hamilton Beach Microwave 1.1cc',
-          id: 3,
-          quantity: 5,
-        }
-      ]
+      name: 'CRUXGG 2-Slice Toaster',
+      id: 3,
+      brand: 'Best Buy',
+      quantity: 1,
+      retailPrice: 39,
+      retailTotal: 39,
+      unitPrice: 13.65,
+      total: 13.65
+    },
+    {
+      name: 'Cuisinart 2-Slice Classic Metal Toaster',
+      id: 4,
+      brand: 'Cuisinart',
+      quantity: 1,
+      retailPrice: 119,
+      retailTotal: 119,
+      unitPrice: 41.65,
+      total: 41.65
+    },
+    {
+      name: 'Cuisinart Custom Select 2-Slice Toaster',
+      id: 5,
+      brand: 'Costco',
+      quantity: 1,
+      retailPrice: 39,
+      retailTotal: 39,
+      unitPrice: 13.65,
+      total: 13.65
+    },
+    {
+      name: 'Cuisinart Classic 4-Slice Metal Toaster',
+      id: 6,
+      brand: 'Crate and Barrel',
+      quantity: 1,
+      retailPrice: 159,
+      retailTotal: 159,
+      unitPrice: 55.65,
+      total: 55.65
+    },
+    {
+      name: 'Figmint 2-Slice Wide Slot Toaster',
+      id: 7,
+      brand: 'eBay',
+      quantity: 4,
+      retailPrice: 43,
+      retailTotal: 172,
+      unitPrice: 15.05,
+      total: 60.2
+    },
+    {
+      name: 'Bella 2-Slice Slim Long Slot Toaster',
+      id: 8,
+      brand: 'Amazon',
+      quantity: 2,
+      retailPrice: 74,
+      retailTotal: 148,
+      unitPrice: 25.9,
+      total: 51.8
+    },
+    {
+      name: 'Kitchensmith by Bella 4-Slice Toaster',
+      id: 9,
+      brand: 'Target',
+      quantity: 2,
+      retailPrice: 19,
+      retailTotal: 38,
+      unitPrice: 6.65,
+      total: 13.3
+    },
+    {
+      name: 'FOHERE Toaster TA7009C-UL',
+      id: 10,
+      brand: 'FOHERE',
+      quantity: 1,
+      retailPrice: 69,
+      retailTotal: 69,
+      unitPrice: 24.15,
+      total: 24.15
     }
-     
-  ];
+    ]
+    },
+    {
+    title: 'Germ Guardian',
+    bundle_price: 1874.34,
+    retail_total: 4806,
+    images: ['assets/products/bundle/germ_bundle.png'],
+    category: 'air purifier',
+    bulk: [
+    {
+      name: 'GermGuardian 4-in-1 Air Purifier (AC4100DBLX)',
+      id: 1,
+      brand: 'GermGuardian',
+      quantity: 54,
+      retailPrice: 89,
+      retailTotal: 4806,
+      unitPrice: 34.71,
+      total: 1874.34
+    }
+    ]
+    },
+    {
+    title: 'Microwave',
+    bundle_price: 917,
+    images: ['assets/products/bundle/microwave_bundle.png'],
+    category: 'microwave',
+    note: "60 days warranty can be purchased for each microwave for just extra 5$ per unit",
+    bulk : [
+    {
+    name: 'Hamilton Beach Microwave 0.7cc',
+    id: 1,
+    quantity: 9,
+    },
+    {
+    name: 'WestingHouse Microwave 0.9cc',
+    id: 2,
+    quantity: 3,
+    },
+    {
+    name: 'Hamilton Beach Microwave 1.1cc',
+    id: 3,
+    quantity: 5,
+    }
+    ]
+    },
+    {
+    title: 'Air Fryer Bundle',
+    bundle_price: 665.15,
+    retail_total: 1899.53,
+    images: ['assets/products/bundle/air_fryer_bundle.png'],
+    category: 'air fryer',
+    bulk: [
+    {
+      name: 'GreenPan Dual Zone Air Fryer (8.5 QT)',
+      id: 1,
+      quantity: 1,
+      retailPrice: 199,
+      retailTotal: 199,
+      unitPrice: 69.95,
+      total: 69.95
+    },
+    {
+      name: 'Emeril Lagasse Power Grill 360 Plus',
+      id: 2,
+      quantity: 1,
+      retailPrice: 185.53,
+      retailTotal: 185.53,
+      unitPrice: 64.95,
+      total: 64.95
+    },
+    {
+      name: 'Black+Decker Extra Wide Convection Oven',
+      id: 3,
+      quantity: 1,
+      retailPrice: 227,
+      retailTotal: 227,
+      unitPrice: 79.45,
+      total: 79.45
+    },
+    {
+      name: 'Kalorik 4.3L Digital Air Fryer',
+      id: 4,
+      quantity: 1,
+      retailPrice: 94,
+      retailTotal: 94,
+      unitPrice: 32.9,
+      total: 32.9
+    },
+    {
+      name: 'Kalorik MAXX Advance 26 QT Air Fryer Oven',
+      id: 5,
+      quantity: 1,
+      retailPrice: 279,
+      retailTotal: 279,
+      unitPrice: 97.65,
+      total: 97.65
+    },
+    {
+      name: 'Gourmia Digital Air Fryer (3 Qt)',
+      id: 6,
+      quantity: 2,
+      retailPrice: 99,
+      retailTotal: 198,
+      unitPrice: 34.65,
+      total: 69.3
+    },
+    {
+      name: 'Gourmia Digital Window Air Fryer (6 Qt)',
+      id: 7,
+      quantity: 1,
+      retailPrice: 149,
+      retailTotal: 149,
+      unitPrice: 52.15,
+      total: 52.15
+    },
+    {
+      name: 'Salton Digital Air Fryer (4.5L / 4.75QT)',
+      id: 8,
+      quantity: 1,
+      retailPrice: 79,
+      retailTotal: 79,
+      unitPrice: 27.65,
+      total: 27.65
+    },
+    {
+      name: 'Ninja Max XL Air Fryer (AF161C)',
+      id: 9,
+      quantity: 1,
+      retailPrice: 280,
+      retailTotal: 280,
+      unitPrice: 98,
+      total: 98
+    },
+    {
+      name: 'Nuwave Brio 15.5 QT Digital Air Fryer',
+      id: 10,
+      quantity: 1,
+      retailPrice: 209,
+      retailTotal: 209,
+      unitPrice: 73.15,
+      total: 73.15
+    }
+    ]
+    },
+    {
+    title: 'Kitchen Appliance Bundle',
+    bundle_price: 548.8,
+    retail_total: 1568.9,
+    images: ['assets/products/bundle/kitchen_appliances_bundle.png'],
+    category: 'kitchen appliance',
+    bulk: [
+    {
+      name: '14-Cup Programmable Coffee Maker with Signature Carafe',
+      id: 1,
+      quantity: 1,
+      retailPrice: 199,
+      retailTotal: 199,
+      unitPrice: 69.65,
+      total: 69.65
+    },
+    {
+      name: '6Qt Slow Cookers',
+      id: 2,
+      quantity: 2,
+      retailPrice: 199,
+      retailTotal: 398,
+      unitPrice: 69.65,
+      total: 139.3
+    },
+    {
+      name: 'Extra Large Electric Griddles',
+      id: 3,
+      quantity: 2,
+      retailPrice: 99,
+      retailTotal: 198,
+      unitPrice: 34.65,
+      total: 69.3
+    },
+    {
+      name: 'Perfect Grind Single Serve Coffee Maker',
+      id: 4,
+      quantity: 1,
+      retailPrice: 159,
+      retailTotal: 159,
+      unitPrice: 55.65,
+      total: 55.65
+    },
+    {
+      name: '1 Litre Kettle',
+      id: 5,
+      quantity: 1,
+      retailPrice: 79,
+      retailTotal: 79,
+      unitPrice: 27.65,
+      total: 27.65
+    },
+    {
+      name: 'Slim Espresso Maker',
+      id: 6,
+      quantity: 1,
+      retailPrice: 279,
+      retailTotal: 279,
+      unitPrice: 97.65,
+      total: 97.65
+    },
+    {
+      name: '5.3 Qt Stand Mixer',
+      id: 7,
+      quantity: 1,
+      retailPrice: 199,
+      retailTotal: 199,
+      unitPrice: 69.65,
+      total: 69.65
+    },
+    {
+      name: 'Beautiful 12-Piece Blender Set (White Icing)',
+      id: 8,
+      quantity: 1,
+      retailPrice: 57.9,
+      retailTotal: 57.9,
+      unitPrice: 19.95,
+      total: 19.95
+    }
+    ]
+    },
+    {
+    title: 'Rice Cooker Bundle',
+    bundle_price: 106.55,
+    retail_total: 305,
+    images: ['assets/products/bundle/rick_cooker_bundle.png'],
+    category: 'rice cooker',
+    bulk: [
+    {
+      name: 'Aroma Rice & Grain Cooker (ARC-302NG)',
+      id: 1,
+      quantity: 2,
+      retailPrice: 86,
+      retailTotal: 172,
+      unitPrice: 30,
+      total: 60
+    },
+    {
+      name: 'Aroma Rice & Grain Cooker (ARC-373NGD)',
+      id: 2,
+      quantity: 1,
+      retailPrice: 27,
+      retailTotal: 27,
+      unitPrice: 9.45,
+      total: 9.45
+    },
+    {
+      name: 'Dash Mini Rice Cooker (2-Cup)',
+      id: 3,
+      quantity: 1,
+      retailPrice: 44,
+      retailTotal: 44,
+      unitPrice: 15.4,
+      total: 15.4
+    },
+    {
+      name: 'Aroma Rice & Grain Cooker (ARC-914SB)',
+      id: 4,
+      quantity: 2,
+      retailPrice: 31,
+      retailTotal: 62,
+      unitPrice: 10.85,
+      total: 21.7
+    }
+    ]
+    },
+    {
+    title: 'Pet Camera Bundle',
+    bundle_price: 306,
+    retail_total: 1242,
+    images: ['assets/products/bundle/pawbo_bulk.png'],
+    category: 'pet camera',
+    bulk: [
+    {
+      name: 'Pawbo+ Wireless Interactive Pet Camera',
+      id: 1,
+      quantity: 18,
+      retailPrice: 69,
+      retailTotal: 1242,
+      unitPrice: 17,
+      total: 306
+    }
+    ]
+    },
+   {
+  title: 'Crock-Pot Slow Cooker Bundle',
+  bundle_price: 665,
+  retail_total: 1915.84,
+  images: ['assets/products/bundle/slow_cooker_bundle.png'],
+  category: 'slow cooker',
+  bulk: [
+    {
+      name: 'Crock-Pot 7-Qt Cook & Carry Slow Cooker (Blue)',
+      id: 1,
+      quantity: 3,
+      retailPrice: 103,
+      retailTotal: 309,
+      unitPrice: 36.05,
+      total: 108.15
+    },
+    {
+      name: 'Crock-Pot 6-Qt Cook & Carry Design Series Slow Cooker (Toasted Plum/Burgundy)',
+      id: 2,
+      quantity: 3,
+      retailPrice: 56,
+      retailTotal: 168,
+      unitPrice: 19.6,
+      total: 58.8
+    },
+    {
+      name: 'Crock-Pot Classic 4.5-Quart Slow Cooker (Toasted Plum/Burgundy)',
+      id: 3,
+      quantity: 12,
+      retailPrice: 29.99,
+      retailTotal: 359.88,
+      unitPrice: 10.15,
+      total: 121.8
+    },
+    {
+      name: 'Crock-Pot Classic 4.5-Quart Slow Cooker (Stainless Steel)',
+      id: 4,
+      quantity: 4,
+      retailPrice: 29.99,
+      retailTotal: 119.96,
+      unitPrice: 10.15,
+      total: 40.6
+    },
+    {
+      name: 'Crock-Pot Classic 8-Quart Slow Cooker with Bonus Little Dipper',
+      id: 5,
+      quantity: 1,
+      retailPrice: 89,
+      retailTotal: 89,
+      unitPrice: 31.15,
+      total: 31.15
+    },
+    {
+      name: 'Crock-Pot 7-Qt Easy to clean',
+      id: 6,
+      quantity: 3,
+      retailPrice: 258,
+      retailTotal: 774,
+      unitPrice: 90.3,
+      total: 270.9
+    },
+    {
+      name: 'Crock-Pot 7-Qt Slow Cooker classic (Stainless Steel)',
+      id: 7,
+      quantity: 2,
+      retailPrice: 48,
+      retailTotal: 96,
+      unitPrice: 16.8,
+      total: 33.6
+    }
+  ]
+},
+    {
+    title: 'Hair Styling Bundle',
+    bundle_price: 198.14,
+    retail_total: 557, // Total of all retail prices
+    images: ['assets/products/bundle/hair_dryer_bundle.png'],
+    category: 'hair styling',
+    bulk: [
+    {
+      name: 'Conair Curl Collective 3-in-1 Ceramic Curling Wand',
+      id: 1,
+      quantity: 1,
+      retailPrice: 82,
+      retailTotal: 82,
+      unitPrice: 28.7,
+      total: 28.7
+    },
+    {
+      name: 'Conair Curl Collective 1875W Ceramic Dryer',
+      id: 2,
+      quantity: 1,
+      retailPrice: 49,
+      retailTotal: 49,
+      unitPrice: 17.1,
+      total: 17.1
+    },
+    {
+      name: 'Revlon Perfectly Flawless Finish Hair Dryer',
+      id: 3,
+      quantity: 1,
+      retailPrice: 49,
+      retailTotal: 49,
+      unitPrice: 17.1,
+      total: 17.1
+    },
+    {
+      name: 'Conair Double Ceramic Volumizing Rollers',
+      id: 4,
+      quantity: 3,
+      retailPrice: 29.98,
+      retailTotal: 89.94,
+      unitPrice: 10.43,
+      total: 31.29
+    },
+    {
+      name: 'Revlon Triple Barrel Hair Waver (Pink)',
+      id: 5,
+      quantity: 1,
+      retailPrice: 71,
+      retailTotal: 71,
+      unitPrice: 24.85,
+      total: 24.85
+    },
+    {
+      name: 'Conair Unbound Cordless Mini Flat Iron (Rose Gold)',
+      id: 6,
+      quantity: 2,
+      retailPrice: 42,
+      retailTotal: 84,
+      unitPrice: 14.7,
+      total: 29.4
+    },
+    {
+      name: 'Conair 2-in-1 Hot Air Brush (Rose Gold)',
+      id: 7,
+      quantity: 1,
+      retailPrice: 46,
+      retailTotal: 46,
+      unitPrice: 16.1,
+      total: 16.1
+    },
+    {
+      name: 'Conair InfinitiPRO Tourmaline Ceramic Hot Air Brush',
+      id: 8,
+      quantity: 1,
+      retailPrice: 51,
+      retailTotal: 51,
+      unitPrice: 17.85,
+      total: 17.85
+    },
+    {
+      name: 'Conair Turbo Heat 1.5" Curling Iron (Rose Gold)',
+      id: 9,
+      quantity: 1,
+      retailPrice: 45,
+      retailTotal: 45,
+      unitPrice: 15.75,
+      total: 15.75
+    }
+    ]
+    },
+{
+  title: 'Massager Bundle',
+  bundle_price: 2735.95,
+  retail_total: 8215,
+  images: ['assets/products/bundle/massager_bundle.png'],
+  category: 'hair styling',
+  bulk: [
+    {
+      name: 'Homemedics Body Flex Compression Stretching Mat',
+      id: 1,
+      quantity: 30,
+      retailPrice: 199,
+      retailTotal: 5970,
+      unitPrice: 65,
+      total: 1950
+    },
+    {
+      name: 'Homedics Total relaxation',
+      id: 2,
+      quantity: 10,
+      retailPrice: 130,
+      retailTotal: 1300,
+      unitPrice: 45.5,
+      total: 455
+    },
+    {
+      name: 'Sharper Image Power Percussion Pro+ Compact Massage Gun',
+      id: 3,
+      quantity: 6,
+      retailPrice: 130,
+      retailTotal: 780,
+      unitPrice: 45.5,
+      total: 273
+    },
+    {
+      name: 'Homedics Compact Hot & Cold Massager',
+      id: 4,
+      quantity: 1,
+      retailPrice: 70,
+      retailTotal: 70,
+      unitPrice: 24.5,
+      total: 24.5
+    },
+    {
+      name: 'Homedics Relaxation for Everybody',
+      id: 5,
+      quantity: 1,
+      retailPrice: 95,
+      retailTotal: 95,
+      unitPrice: 33.45,
+      total: 33.45
+    }
+  ]
+},
+{
+  title: 'Tineco & Cordless Vacuum Bundle',
+  bundle_price: 808,
+  retail_total: 1616.97,
+  images: ['assets/products/bundle/vaccum_cleaner_bundle.png'],
+  category: 'vacuum & floor washer',
+  bulk: [
+    {
+      name: 'Tineco iFLOOR 2 Max Cordless Floor Washer',
+      id: 1,
+      quantity: 2,
+      retailPrice: 249.99,
+      retailTotal: 499.98,
+      unitPrice: 125,
+      total: 250
+    },
+    {
+      name: 'Tineco GO PET Cordless Vacuum',
+      id: 2,
+      quantity: 1,
+      retailPrice: 449,
+      retailTotal: 449,
+      unitPrice: 224.5,
+      total: 224.5
+    },
+    {
+      name: 'Tineco A10-D Plus Cordless Stick Vacuum',
+      id: 3,
+      quantity: 1,
+      retailPrice: 189.99,
+      retailTotal: 189.99,
+      unitPrice: 95,
+      total: 95
+    },
+    {
+      name: 'Tineco GO Series Cordless Stick Vacuum',
+      id: 4,
+      quantity: 1,
+      retailPrice: 249,
+      retailTotal: 249,
+      unitPrice: 124.5,
+      total: 124.5
+    },
+    {
+      name: 'Dsurupa V10 Ultra Cordless Vacuum Cleaner',
+      id: 5,
+      quantity: 1,
+      retailPrice: 129,
+      retailTotal: 129,
+      unitPrice: 64.5,
+      total: 64.5
+    },
+    {
+      name: 'Dirt Devil Cordless Versa 3-in-1 Stick Vacuum',
+      id: 6,
+      quantity: 1,
+      retailPrice: 99,
+      retailTotal: 99,
+      unitPrice: 49.5,
+      total: 49.5
+    }
+  ]
+}
 
-  constructor(private route: ActivatedRoute, private dialog: MatDialog) {
+];
+
+  constructor(
+    private route: ActivatedRoute, 
+    private dialog: MatDialog,
+  ) {
+    this.route.queryParams.subscribe(searchValue => {
+      this.searchTerm = searchValue['search'] 
+    })
     this.bundles.forEach(bundle => {
       this.currentImageIndex[bundle.title] = 0;
       this.imageLoadingState[bundle.title] = true;
