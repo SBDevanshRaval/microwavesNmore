@@ -1,0 +1,28 @@
+
+
+.bundle-of-the-week-container {
+    padding: 1rem;
+}
+
+.week-bundle-title {
+    text-align: center;
+    font-size: 2rem;
+    position: relative;
+}
+
+.week-bundle-image-container {
+    height: 300px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.week-bundle-image-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.view-bundle-btn {
+    margin-top: 1rem;
+    width: 100%;
+}

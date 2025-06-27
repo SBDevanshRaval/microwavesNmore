@@ -80,9 +80,16 @@
     word-wrap: break-word;
 }
 
-.bundle-price {
+.bundle-price , .retail-price{
+    margin-bottom: 1rem;
     text-align: center;
 }
+
+.retail-price {
+    text-decoration:  line-through;
+}
+
+
 
 mat-form-field {
     width: 100%;
