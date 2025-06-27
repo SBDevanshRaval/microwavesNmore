@@ -33,4 +33,5 @@ export class ProductDetailsDialogComponent {
   getCurrentImage(): string {
     return this.data.images[this.currentImageIndex];
   }
+ 
 } 

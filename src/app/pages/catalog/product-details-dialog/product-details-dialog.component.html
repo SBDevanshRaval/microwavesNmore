@@ -23,7 +23,10 @@
 
         <div class="details-section">
             <div class="product-main-info">
-                <h2 class="product-title">{{data.title}}</h2>
+                <h2 class="product-title" *ngIf="data?.bargain === true ; else normalTitle">{{data.title}} - <span ><a  href="https://wa.me/16479833222" class="quotation-text">Ask for Quotation</a> </span></h2>
+                <ng-template #normalTitle>
+                    <h2 class="product-title">{{data.title}}</h2>
+                </ng-template>
                 <p *ngIf="data.size" class="size">Size: {{data.size}}</p>
                 <p *ngIf="data.colors" class="colors">Available in {{data.colors}} colors</p>
                 <p *ngIf="data.includes" class="includes">
@@ -96,6 +99,13 @@
                     <mat-icon class="warranty-icon">verified</mat-icon>
                     Includes Warranty
                 </p>
+                <div *ngIf="data.description !== '' && data.description !== undefined && data.description">
+                <div class="description-title">Description: </div>
+                <div class="description-content" >
+                    {{data.description}}
+                </div>    
+                </div>
+                
             </div>
         </div>
     </div>

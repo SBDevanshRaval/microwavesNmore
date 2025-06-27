@@ -221,3 +221,18 @@
         font-size: 20px;
     }
 } 
+
+.quotation-text {
+    color: green;
+    text-decoration: none;
+}
+
+.description-title {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.description-content {
+    text-align: justify;
+}

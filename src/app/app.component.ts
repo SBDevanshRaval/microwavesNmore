@@ -9,7 +9,7 @@ import { WeekBundleComponent } from './shared/week-bundle/week-bundle.component'
 })
 export class AppComponent implements OnInit {
   title = 'microwavesNmore';
-  
+  public showPopUp: boolean = true;
  
   @ViewChild('mainContainer') mainContainer!: ElementRef;
  
@@ -17,7 +17,10 @@ export class AppComponent implements OnInit {
   private dialog: MatDialog
  ){}
   ngOnInit() {
-    this.initializeWeekBundle()
+    if(this.showPopUp){
+      this.initializeWeekBundle()
+    }
+
   }
 
   async initializeWeekBundle(){

@@ -15,7 +15,7 @@ constructor(
   
 viewBundle() {
   this.router.navigate(['/bundle'], {
-      queryParams: { search: 'massage' }
+      queryParams: { search: 'juicer' }
 
   })
   this.closeDialog();
